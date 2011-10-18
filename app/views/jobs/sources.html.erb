@@ -1,0 +1,17 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <tr>
+    <th>Source</th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+	<td><%= link_to job.source, '/jobs/result?url='+job.url %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back to Main', root_path %>

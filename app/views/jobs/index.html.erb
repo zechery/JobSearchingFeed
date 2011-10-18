@@ -1,0 +1,26 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <tr>
+    <th>Source</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.source %></td>
+    <td><%= job.url %></td>
+    <td><%= link_to 'Show', job %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add a New Source', new_job_path %>	
+<%= link_to 'Back to Main', root_path %>
