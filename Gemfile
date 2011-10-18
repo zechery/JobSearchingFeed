@@ -1,22 +1,21 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.0.3'
 
 # Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'sqlite3'
-gem 'sqlite3', '1.3.4', :group => :development
+gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+group :development do
+  gem 'rspec-rails', '2.3.0'
 end
 
-gem 'jquery-rails'
+group :test do
+  gem 'rspec', '2.3.0'
+  gem 'webrat', '0.7.1'
+  gem 'spork', '0.8.4'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -24,10 +23,19 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
+# gem 'ruby-debug'
+# gem 'ruby-debug19'
 
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-end
+# Bundle the extra gems:
+# gem 'bj'
+# gem 'nokogiri'
+# gem 'sqlite3-ruby', :require => 'sqlite3'
+# gem 'aws-s3', :require => 'aws/s3'
+
+# Bundle gems for the local environment. Make sure to
+# put test-only gems in this group so their generators
+# and rake tasks are available in development mode:
+# group :development, :test do
+#   gem 'webrat'
+# end
